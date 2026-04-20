@@ -16,16 +16,16 @@
 (function () {
   'use strict';
 
+  const VERSAO_SCRIPT = "1.3";
   const GIST_URL = "https://gist.githubusercontent.com/tiagodiaf/611272ebb7015a7d3c7a6f12c2c1d0a6/raw/nemesis-tarefas.json?v=" + Date.now();
   const ID_NUM_MECANO = 'wtWBAddTarefas_wtRecolha_Nmec';
 
   let tarefas = [];
 
-function carregarTarefas(cb) {
-    // Usamos apenas o GIST_URL porque ele já tem o Date.now() definido na constante
+  function carregarTarefas(cb) {
     GM_xmlhttpRequest({
       method: 'GET',
-      url: GIST_URL, 
+      url: GIST_URL,
       onload: function (r) {
         try { 
           const data = JSON.parse(r.responseText);
@@ -142,7 +142,6 @@ function carregarTarefas(cb) {
       fontFamily: 'Segoe UI,Arial,sans-serif'
     });
 
-    // Cabeçalho
     var hdr = document.createElement('div');
     Object.assign(hdr.style, { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' });
     var tit = document.createElement('span');
@@ -164,7 +163,6 @@ function carregarTarefas(cb) {
     hdr.appendChild(acoes);
     menu.appendChild(hdr);
 
-    // Mensagem de erro OU lista de tarefas
     if (erro) {
       var msgErro = document.createElement('div');
       msgErro.innerText = '⚠ ' + erro;
@@ -198,7 +196,6 @@ function carregarTarefas(cb) {
       });
     }
 
-    // Separador + input manual (sempre visível)
     var hr = document.createElement('hr');
     Object.assign(hr.style, { margin: '4px 0', border: 'none', borderTop: '1px solid #ddd' });
     menu.appendChild(hr);
@@ -224,6 +221,14 @@ function carregarTarefas(cb) {
     row.appendChild(inp);
     row.appendChild(btnOk);
     menu.appendChild(row);
+
+    // Texto da versão no fundo
+    var vText = document.createElement('div');
+    vText.innerText = 'v' + VERSAO_SCRIPT;
+    Object.assign(vText.style, {
+      fontSize: '9px', color: '#bbb', textAlign: 'right', marginTop: '4px'
+    });
+    menu.appendChild(vText);
 
     document.body.appendChild(menu);
     inp.focus();
