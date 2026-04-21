@@ -12,6 +12,7 @@ Clica no link correspondente ao teu browser:
 Para que o script funcione, deves configurar o browser e o Tampermonkey para permitir scripts de utilizadores:
 
 **Modo de Programador**: No teu browser, acede a chrome://extensions/ e ativa o Modo de Programador (Developer Mode) no canto superior direito.
+
 **Permitir Scripts Pessoais**: Nas definições do Tampermonkey, deves garantir que o nível de segurança permite a execução de scripts de utilizador. 
 
 Consulta as instruções oficiais aqui: **[Tampermonkey FAQ - Q209](https://www.tampermonkey.net/faq.php?locale=en&q=Q209)**
