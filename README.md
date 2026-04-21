@@ -8,6 +8,7 @@ Clica no link correspondente ao teu browser:
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 ⚙️ **Configuração Obrigatória**
+
 Para que o script funcione, deves configurar o browser e o Tampermonkey para permitir scripts de utilizadores:
 
 **Modo de Programador**: No teu browser, acede a chrome://extensions/ e ativa o Modo de Programador (Developer Mode) no canto superior direito.
